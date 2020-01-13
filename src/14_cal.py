@@ -22,3 +22,16 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+response = input("Enter date: ").split(" ")
+length = len(response)
+now = datetime.now()
+
+if response[0] == "":
+  print(calendar.month(now.year, now.month))
+elif length == 1:
+  print(calendar.month(now.year, int(response[0])))
+elif length == 2:
+  print(calendar.month(int(response[1]), int(response[0])))
+else:
+  print("You must specify only a month and year")
